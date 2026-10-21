@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DaFix – A plataforma mais segura para contratar profissionais qualificados para serviços residenciais, manutenção predial, reformas e instalações.">
+  <meta name="keywords" content="serviços residenciais, eletricista, encanador, pintor, manutenção, reformas, profissionais, DaFix">
+  <meta property="og:title" content="DaFix – Contrate profissionais qualificados">
+  <meta property="og:description" content="Encontre eletricistas, encanadores, pintores e especialistas em poucos minutos com garantia e segurança.">
+  <meta property="og:image" content="/assets/og-image.jpg">
+  <title>DaFix – Profissionais para sua casa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landing-page.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+  <!-- ====== HEADER ====== -->
+  <header class="lp-header" id="lp-header" role="banner">
+    <div class="header-left">
+      <a href="/landing" class="logo" aria-label="DaFix – página inicial">
+        <img src="/assets/logo.png" alt="" class="logo__icon" width="40" height="40" aria-hidden="true">
+        Da<span>Fix</span>
+      </a>
+      <nav class="nav-menu" role="navigation" aria-label="Menu principal">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#profissionais">Profissionais</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <button class="btn-icon" id="theme-toggle" aria-label="Alternar tema escuro/claro">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <a href="/index" class="btn btn--ghost btn--sm" aria-label="Entrar na plataforma">Entrar</a>
+      <a href="#solicitar" class="btn btn--primary btn--sm" aria-label="Solicitar um serviço">Solicitar Serviço</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-overlay" id="mobile-overlay" aria-hidden="true"></div>
+  <nav class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+    <button class="mobile-close" id="mobile-close" aria-label="Fechar menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <a href="#inicio" class="mobile-link">Início</a>
+    <a href="#servicos" class="mobile-link">Serviços</a>
+    <a href="#profissionais" class="mobile-link">Profissionais</a>
+    <a href="#como-funciona" class="mobile-link">Como Funciona</a>
+    <a href="#diferenciais" class="mobile-link">Diferenciais</a>
+    <a href="#avaliacoes" class="mobile-link">Avaliações</a>
+    <a href="#contato" class="mobile-link">Contato</a>
+    <a href="/index" class="btn btn--ghost" style="margin-top:16px">Entrar</a>
+    <a href="#solicitar" class="btn btn--primary">Solicitar Serviço</a>
+  </nav>
+
+  <!-- ====== MAIN ====== -->
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="hero-section" id="inicio" aria-label="Seção principal">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <span class="chip chip--soft" role="note">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Mais de 10.000 serviços concluídos com sucesso
+          </span>
+          <h1 class="hero-headline">
+            A maneira mais <span class="grad-text">rápida e segura</span> de contratar profissionais para sua casa.
+          </h1>
+          <p class="hero-sub">Encontre eletricistas, encanadores, pintores, montadores de móveis, técnicos e especialistas em poucos minutos. Sem burocracia, com garantia.</p>
+          <div class="hero-cta">
+            <a href="#solicitar" class="btn btn--primary btn--lg" aria-label="Solicitar serviço agora">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              Solicitar Serviço Agora
+            </a>
+            <a href="#como-funciona" class="btn btn--ghost btn--lg">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+              Ver Como Funciona
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-illustration">
+            <div class="hero-blob"></div>
+            <div class="hero-phone-wrap">
+              <div class="hero-phone" role="img" aria-label="Prévia do aplicativo DaFix">
+                <div class="phone-header">
+                  <img src="/assets/logo.png" alt="" class="phone-logo" width="32" height="32" aria-hidden="true">
+                  <div>
+                    <div class="phone-title">DaFix</div>
+                    <div class="phone-sub">Profissionais verificados</div>
+                  </div>
+                </div>
+                <div class="phone-service">
+                  <div class="phone-service-icon blue">⚡</div>
+                  <div>
+                    <div class="phone-service-name">Eletricista Residencial</div>
+                    <div class="phone-rating">★ 4.9</div>
+                    <div class="phone-service-desc">A partir de R$ 89</div>
+                  </div>
+                </div>
+                <div class="phone-service">
+                  <div class="phone-service-icon violet">🔧</div>
+                  <div>
+                    <div class="phone-service-name">Hidráulica</div>
+                    <div class="phone-rating">★ 4.8</div>
+                    <div class="phone-service-desc">A partir de R$ 99</div>
+                  </div>
+                </div>
+                <div class="phone-service">
+                  <div class="phone-service-icon green">🎨</div>
+                  <div>
+                    <div class="phone-service-name">Pintura</div>
+                    <div class="phone-rating">★ 4.9</div>
+                    <div class="phone-service-desc">A partir de R$ 149</div>
+                  </div>
+                </div>
+                <div class="phone-cta-bar">
+                  <span>Solicitar agora</span>
+                  <button>Contratar</button>
+                </div>
+              </div>
+            </div>
+            <!-- Floating Cards -->
+            <div class="floating-cards" role="presentation">
+              <div class="float-card float-card--1">
+                <div class="float-icon blue">✅</div>
+                <div>
+                  <div class="float-value" data-counter="10000" data-suffix="+">0</div>
+                  <div class="float-label">Serviços Concluídos</div>
+                </div>
+              </div>
+              <div class="float-card float-card--2">
+                <div class="float-icon green">😊</div>
+                <div>
+                  <div class="float-value" data-counter="98" data-suffix="%">0</div>
+                  <div class="float-label">Clientes Satisfeitos</div>
+                </div>
+              </div>
+              <div class="float-card float-card--3">
+                <div class="float-icon amber">👷</div>
+                <div>
+                  <div class="float-value" data-counter="3500" data-suffix="+">0</div>
+                  <div class="float-label">Profissionais Ativos</div>
+                </div>
+              </div>
+              <div class="float-card float-card--4">
+                <div class="float-icon violet">🕐</div>
+                <div>
+                  <div class="float-value">24h</div>
+                  <div class="float-label">Atendimento</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <section class="section section--alt" id="metricas" aria-label="Métricas da plataforma">
+      <div class="container">
+        <div class="metrics" role="list">
+          <div class="metric reveal" role="listitem">
+            <div class="metric__icon blue" aria-hidden="true">🏆</div>
+            <div class="metric__value" data-counter="10000" data-suffix="+">0</div>
+            <div class="metric__label">Serviços Realizados</div>
+          </div>
+          <div class="metric reveal reveal-delay-1" role="listitem">
+            <div class="metric__icon amber" aria-hidden="true">👷</div>
+            <div class="metric__value" data-counter="3500" data-suffix="+">0</div>
+            <div class="metric__label">Profissionais</div>
+          </div>
+          <div class="metric reveal reveal-delay-2" role="listitem">
+            <div class="metric__icon green" aria-hidden="true">⭐</div>
+            <div class="metric__value" data-counter="98" data-suffix="%">0</div>
+            <div class="metric__label">Satisfação</div>
+          </div>
+          <div class="metric reveal reveal-delay-3" role="listitem">
+            <div class="metric__icon violet" aria-hidden="true">🕐</div>
+            <div class="metric__value">24h</div>
+            <div class="metric__label">Suporte</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="servicos" aria-label="Nossos serviços">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-label">Serviços</div>
+          <h2 class="section-title">Encontre o serviço ideal</h2>
+          <p class="section-sub">Profissionais especializados para qualquer necessidade residencial, predial ou comercial.</p>
+        </div>
+        <div class="services-grid" role="list">
+          <article class="service-card reveal" role="listitem" tabindex="0" aria-label="Elétrica – Eletricista Residencial">
+            <div class="service-icon-wrap" aria-hidden="true">⚡</div>
+            <div class="service-cat">RESIDENCIAL</div>
+            <div class="service-name">Eletricista Residencial</div>
+            <div class="service-desc">Instalações, manutenção preventiva e corretiva, quadro de luz e redes elétricas.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.9</div>
+                <div class="service-price">A partir de R$ 89</div>
+              </div>
+              <button class="svc-btn" aria-label="Contratar eletricista">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal reveal-delay-1" role="listitem" tabindex="0" aria-label="Hidráulica – Encanador Residencial">
+            <div class="service-icon-wrap" aria-hidden="true">🔧</div>
+            <div class="service-cat">RESIDENCIAL</div>
+            <div class="service-name">Hidráulica</div>
+            <div class="service-desc">Reparos, instalação de torneiras, vazamentos, desentupimento e tubulações.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.8</div>
+                <div class="service-price">A partir de R$ 99</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal reveal-delay-2" role="listitem" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">🎨</div>
+            <div class="service-cat">RESIDENCIAL</div>
+            <div class="service-name">Pintura</div>
+            <div class="service-desc">Pintura interna, externa, textura, grafiato e acabamentos especiais.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.9</div>
+                <div class="service-price">A partir de R$ 149</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal reveal-delay-3" role="listitem" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">🏗️</div>
+            <div class="service-cat">REFORMAS</div>
+            <div class="service-name">Reformas</div>
+            <div class="service-desc">Reformas completas, demolição, alvenaria, revestimentos e acabamentos.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.7</div>
+                <div class="service-price">A partir de R$ 299</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal" role="listitem" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">🛋️</div>
+            <div class="service-cat">MONTAGEM</div>
+            <div class="service-name">Montagem de Móveis</div>
+            <div class="service-desc">Montagem e desmontagem de móveis de todos os tipos e marcas.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.9</div>
+                <div class="service-price">A partir de R$ 79</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal reveal-delay-1" role="listitem" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">🌿</div>
+            <div class="service-cat">EXTERNO</div>
+            <div class="service-name">Jardinagem</div>
+            <div class="service-desc">Podas, plantio, paisagismo, irrigação e manutenção de jardins e quintais.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.8</div>
+                <div class="service-price">A partir de R$ 89</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal reveal-delay-2" role="listitem" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">🧹</div>
+            <div class="service-cat">LIMPEZA</div>
+            <div class="service-name">Limpeza Pós-Obra</div>
+            <div class="service-desc">Limpeza especializada após reformas e construções, remoção de resíduos.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.9</div>
+                <div class="service-price">A partir de R$ 199</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal reveal-delay-3" role="listitem" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">❄️</div>
+            <div class="service-cat">INSTALAÇÃO</div>
+            <div class="service-name">Ar Condicionado</div>
+            <div class="service-desc">Instalação, manutenção, higienização e recarga de ar-condicionado.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.8</div>
+                <div class="service-price">A partir de R$ 179</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal" role="listitem" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">📺</div>
+            <div class="service-cat">INSTALAÇÃO</div>
+            <div class="service-name">Instalação de TV</div>
+            <div class="service-desc">Suporte de parede, passagem de cabo, configuração e antena.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.9</div>
+                <div class="service-price">A partir de R$ 69</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal reveal-delay-1" role="listitem" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">🪵</div>
+            <div class="service-cat">MARCENARIA</div>
+            <div class="service-name">Marcenaria</div>
+            <div class="service-desc">Fabricação e reparo de peças em madeira, portas, janelas e armários.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.8</div>
+                <div class="service-price">A partir de R$ 119</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal reveal-delay-2" role="listitem" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">🔩</div>
+            <div class="service-cat">RESIDENCIAL</div>
+            <div class="service-name">Pequenos Reparos</div>
+            <div class="service-desc">Consertos gerais, fixação, furos, prateleiras e serviços rápidos.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.9</div>
+                <div class="service-price">A partir de R$ 59</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+          <article class="service-card reveal reveal-delay-3" role="listitem" tabindex="0">
+            <div class="service-icon-wrap" aria-hidden="true">🤖</div>
+            <div class="service-cat">TECNOLOGIA</div>
+            <div class="service-name">Automação Residencial</div>
+            <div class="service-desc">Smart home, automação de iluminação, persianas, câmeras e segurança.</div>
+            <div class="service-footer">
+              <div>
+                <div class="service-rating">★ 4.9</div>
+                <div class="service-price">A partir de R$ 249</div>
+              </div>
+              <button class="svc-btn">Contratar</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROFESSIONALS -->
+    <section class="section" id="profissionais" aria-label="Profissionais em destaque">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-label">Time</div>
+          <h2 class="section-title">Profissionais em Destaque</h2>
+          <p class="section-sub">Todos os profissionais são verificados, avaliados e treinados para garantir o melhor serviço.</p>
+        </div>
+        <div class="pros-grid" role="list">
+          <article class="pro-card reveal" role="listitem" aria-label="Carlos Mendes, Eletricista">
+            <div class="pro-card-top">
+              <div class="pro-avatar" aria-hidden="true" style="background:linear-gradient(135deg,#2563eb,#7c3aed)">CM</div>
+              <div class="pro-info">
+                <div class="pro-name">Carlos Mendes</div>
+                <div class="pro-spec">Eletricista Sênior</div>
+                <div class="pro-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Curitiba – PR
+                </div>
+              </div>
+              <div class="pro-star">★ 4.9</div>
+            </div>
+            <div class="pro-stats">
+              <div class="pro-stat">
+                <div class="pro-stat-val">540</div>
+                <div class="pro-stat-label">Serviços</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">6 anos</div>
+                <div class="pro-stat-label">Experiência</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">100%</div>
+                <div class="pro-stat-label">Aprovação</div>
+              </div>
+            </div>
+            <div class="pro-badge" aria-label="Profissional verificado">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Profissional Verificado
+            </div>
+          </article>
+          <article class="pro-card reveal reveal-delay-1" role="listitem" aria-label="Ana Paula Ribeiro, Pintora">
+            <div class="pro-card-top">
+              <div class="pro-avatar" aria-hidden="true" style="background:linear-gradient(135deg,#f43f5e,#f97316)">AP</div>
+              <div class="pro-info">
+                <div class="pro-name">Ana Paula Ribeiro</div>
+                <div class="pro-spec">Pintora Profissional</div>
+                <div class="pro-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  São Paulo – SP
+                </div>
+              </div>
+              <div class="pro-star">★ 4.9</div>
+            </div>
+            <div class="pro-stats">
+              <div class="pro-stat">
+                <div class="pro-stat-val">312</div>
+                <div class="pro-stat-label">Serviços</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">4 anos</div>
+                <div class="pro-stat-label">Experiência</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">98%</div>
+                <div class="pro-stat-label">Aprovação</div>
+              </div>
+            </div>
+            <div class="pro-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Profissional Verificado
+            </div>
+          </article>
+          <article class="pro-card reveal reveal-delay-2" role="listitem" aria-label="João Silva, Encanador">
+            <div class="pro-card-top">
+              <div class="pro-avatar" aria-hidden="true" style="background:linear-gradient(135deg,#10b981,#2563eb)">JS</div>
+              <div class="pro-info">
+                <div class="pro-name">João Silva</div>
+                <div class="pro-spec">Encanador Master</div>
+                <div class="pro-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Belo Horizonte – MG
+                </div>
+              </div>
+              <div class="pro-star">★ 4.8</div>
+            </div>
+            <div class="pro-stats">
+              <div class="pro-stat">
+                <div class="pro-stat-val">478</div>
+                <div class="pro-stat-label">Serviços</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">8 anos</div>
+                <div class="pro-stat-label">Experiência</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">97%</div>
+                <div class="pro-stat-label">Aprovação</div>
+              </div>
+            </div>
+            <div class="pro-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Profissional Verificado
+            </div>
+          </article>
+          <article class="pro-card reveal" role="listitem" aria-label="Lucas Ferreira, Montador">
+            <div class="pro-card-top">
+              <div class="pro-avatar" aria-hidden="true" style="background:linear-gradient(135deg,#7c3aed,#f43f5e)">LF</div>
+              <div class="pro-info">
+                <div class="pro-name">Lucas Ferreira</div>
+                <div class="pro-spec">Montador de Móveis</div>
+                <div class="pro-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Porto Alegre – RS
+                </div>
+              </div>
+              <div class="pro-star">★ 5.0</div>
+            </div>
+            <div class="pro-stats">
+              <div class="pro-stat">
+                <div class="pro-stat-val">623</div>
+                <div class="pro-stat-label">Serviços</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">5 anos</div>
+                <div class="pro-stat-label">Experiência</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">100%</div>
+                <div class="pro-stat-label">Aprovação</div>
+              </div>
+            </div>
+            <div class="pro-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Profissional Verificado
+            </div>
+          </article>
+          <article class="pro-card reveal reveal-delay-1" role="listitem" aria-label="Fernanda Costa, Técnica em AC">
+            <div class="pro-card-top">
+              <div class="pro-avatar" aria-hidden="true" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">FC</div>
+              <div class="pro-info">
+                <div class="pro-name">Fernanda Costa</div>
+                <div class="pro-spec">Técnica em Ar Condicionado</div>
+                <div class="pro-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Florianópolis – SC
+                </div>
+              </div>
+              <div class="pro-star">★ 4.9</div>
+            </div>
+            <div class="pro-stats">
+              <div class="pro-stat">
+                <div class="pro-stat-val">287</div>
+                <div class="pro-stat-label">Serviços</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">3 anos</div>
+                <div class="pro-stat-label">Experiência</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">99%</div>
+                <div class="pro-stat-label">Aprovação</div>
+              </div>
+            </div>
+            <div class="pro-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Profissional Verificado
+            </div>
+          </article>
+          <article class="pro-card reveal reveal-delay-2" role="listitem" aria-label="Roberto Alves, Marceneiro">
+            <div class="pro-card-top">
+              <div class="pro-avatar" aria-hidden="true" style="background:linear-gradient(135deg,#0f172a,#2563eb)">RA</div>
+              <div class="pro-info">
+                <div class="pro-name">Roberto Alves</div>
+                <div class="pro-spec">Marceneiro Especialista</div>
+                <div class="pro-location">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  Campinas – SP
+                </div>
+              </div>
+              <div class="pro-star">★ 4.8</div>
+            </div>
+            <div class="pro-stats">
+              <div class="pro-stat">
+                <div class="pro-stat-val">391</div>
+                <div class="pro-stat-label">Serviços</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">10 anos</div>
+                <div class="pro-stat-label">Experiência</div>
+              </div>
+              <div class="pro-stat">
+                <div class="pro-stat-val">96%</div>
+                <div class="pro-stat-label">Aprovação</div>
+              </div>
+            </div>
+            <div class="pro-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              Profissional Verificado
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="como-funciona" aria-label="Como funciona">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-label">Processo</div>
+          <h2 class="section-title">Como Funciona</h2>
+          <p class="section-sub">Em menos de 2 minutos você solicita, recebe orçamentos e acompanha seu serviço.</p>
+        </div>
+        <div class="steps" role="list">
+          <div class="step reveal" role="listitem">
+            <div class="step-num active" aria-hidden="true">1</div>
+            <div>
+              <div class="step-icon" aria-hidden="true">🔍</div>
+              <div class="step-title">Escolha o serviço</div>
+              <div class="step-desc">Navegue pelos serviços disponíveis e selecione o que precisa.</div>
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-1" role="listitem">
+            <div class="step-num" aria-hidden="true">2</div>
+            <div>
+              <div class="step-icon" aria-hidden="true">📋</div>
+              <div class="step-title">Receba orçamentos</div>
+              <div class="step-desc">Profissionais verificados enviam orçamentos em minutos.</div>
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-2" role="listitem">
+            <div class="step-num" aria-hidden="true">3</div>
+            <div>
+              <div class="step-icon" aria-hidden="true">🤝</div>
+              <div class="step-title">Contrate o profissional</div>
+              <div class="step-desc">Escolha o melhor perfil e confirme a contratação.</div>
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-3" role="listitem">
+            <div class="step-num" aria-hidden="true">4</div>
+            <div>
+              <div class="step-icon" aria-hidden="true">📍</div>
+              <div class="step-title">Acompanhe o atendimento</div>
+              <div class="step-desc">Monitore em tempo real o status do seu serviço.</div>
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-4" role="listitem">
+            <div class="step-num" aria-hidden="true">5</div>
+            <div>
+              <div class="step-icon" aria-hidden="true">⭐</div>
+              <div class="step-title">Avalie o serviço</div>
+              <div class="step-desc">Sua avaliação garante a qualidade para todos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFFERENTIALS -->
+    <section class="section section--alt" id="diferenciais" aria-label="Nossos diferenciais">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-label">Diferenciais</div>
+          <h2 class="section-title">Por que escolher a DaFix?</h2>
+          <p class="section-sub">Uma plataforma construída para oferecer segurança, qualidade e tranquilidade em cada serviço.</p>
+        </div>
+        <div class="diff-grid" role="list">
+          <div class="diff-card reveal" role="listitem">
+            <div class="diff-icon" aria-hidden="true">✅</div>
+            <div class="diff-title">Profissionais Verificados</div>
+            <div class="diff-desc">Todos os profissionais passam por verificação de identidade, antecedentes criminais e validação de certificações antes de ingressar na plataforma. Sua segurança é nossa prioridade.</div>
+          </div>
+          <div class="diff-card reveal reveal-delay-1" role="listitem">
+            <div class="diff-icon" aria-hidden="true">🛡️</div>
+            <div class="diff-title">Garantia de Serviço</div>
+            <div class="diff-desc">Oferecemos garantia de até 90 dias em todos os serviços contratados. Se algo não sair como esperado, acionamos o profissional sem custo adicional para você.</div>
+          </div>
+          <div class="diff-card reveal reveal-delay-2" role="listitem">
+            <div class="diff-icon" aria-hidden="true">⚡</div>
+            <div class="diff-title">Atendimento Rápido</div>
+            <div class="diff-desc">Receba os primeiros orçamentos em menos de 5 minutos. Para urgências, temos profissionais disponíveis 24 horas por dia, 7 dias por semana.</div>
+          </div>
+          <div class="diff-card reveal" role="listitem">
+            <div class="diff-icon" aria-hidden="true">💳</div>
+            <div class="diff-title">Pagamento Seguro</div>
+            <div class="diff-desc">O pagamento só é liberado ao profissional após a conclusão e aprovação do serviço. Aceitamos cartão, Pix e boleto com toda a segurança de uma plataforma criptografada.</div>
+          </div>
+          <div class="diff-card reveal reveal-delay-1" role="listitem">
+            <div class="diff-icon" aria-hidden="true">⭐</div>
+            <div class="diff-title">Avaliações Reais</div>
+            <div class="diff-desc">Todas as avaliações são feitas por clientes reais que efetivamente contrataram o serviço. Transparência total para que você escolha com confiança.</div>
+          </div>
+          <div class="diff-card reveal reveal-delay-2" role="listitem">
+            <div class="diff-icon" aria-hidden="true">🎧</div>
+            <div class="diff-title">Suporte Especializado</div>
+            <div class="diff-desc">Nossa equipe de suporte está disponível via chat, e-mail e telefone para resolver qualquer dúvida ou problema antes, durante e após o serviço.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section" id="avaliacoes" aria-label="Avaliações de clientes">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-label">Depoimentos</div>
+          <h2 class="section-title">O que nossos clientes dizem</h2>
+          <p class="section-sub">Mais de 10.000 clientes satisfeitos em todo o Brasil.</p>
+        </div>
+        <div class="testimonials-track" role="region" aria-label="Carrossel de depoimentos" aria-live="polite">
+          <div class="testimonials-inner" id="testimonials-inner">
+            <div class="testimonial-card active" role="group" aria-label="Depoimento 1">
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="testimonial-text">Excelente profissional, chegou no horário e resolveu o problema elétrico rapidamente. Muito educado e cuidadoso. Com certeza vou contratar novamente!</p>
+              <div class="testimonial-author">
+                <div class="t-avatar" style="background:linear-gradient(135deg,#2563eb,#7c3aed)" aria-hidden="true">MO</div>
+                <div>
+                  <div class="t-name">Maria Oliveira</div>
+                  <div class="t-meta">Curitiba – PR · Eletricista</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" role="group" aria-label="Depoimento 2">
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="testimonial-text">Usei o DaFix para reformar meu banheiro e fiquei impressionado com a qualidade. O profissional foi pontual, organizado e entregou além do esperado.</p>
+              <div class="testimonial-author">
+                <div class="t-avatar" style="background:linear-gradient(135deg,#10b981,#2563eb)" aria-hidden="true">RS</div>
+                <div>
+                  <div class="t-name">Ricardo Santos</div>
+                  <div class="t-meta">São Paulo – SP · Reformas</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" role="group" aria-label="Depoimento 3">
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="testimonial-text">A plataforma é incrível! Em menos de 3 minutos já tinha 4 orçamentos. Escolhi o melhor perfil e o serviço foi feito no mesmo dia. Recomendo demais!</p>
+              <div class="testimonial-author">
+                <div class="t-avatar" style="background:linear-gradient(135deg,#f43f5e,#f97316)" aria-hidden="true">JL</div>
+                <div>
+                  <div class="t-name">Juliana Lima</div>
+                  <div class="t-meta">Belo Horizonte – MG · Hidráulica</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" role="group" aria-label="Depoimento 4">
+              <div class="testimonial-stars" aria-label="4 estrelas">★★★★★</div>
+              <p class="testimonial-text">Contratei o serviço de montagem de móveis e o profissional montou tudo com muito cuidado e atenção. Preço justo, serviço rápido e qualidade garantida.</p>
+              <div class="testimonial-author">
+                <div class="t-avatar" style="background:linear-gradient(135deg,#7c3aed,#2563eb)" aria-hidden="true">CP</div>
+                <div>
+                  <div class="t-name">Carlos Pereira</div>
+                  <div class="t-meta">Porto Alegre – RS · Montagem</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" role="group" aria-label="Depoimento 5">
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="testimonial-text">Precisei com urgência de um encanador e em 20 minutos já estava com o profissional na minha casa. Resolveu o vazamento rapidamente. Excelente atendimento!</p>
+              <div class="testimonial-author">
+                <div class="t-avatar" style="background:linear-gradient(135deg,#f59e0b,#10b981)" aria-hidden="true">AM</div>
+                <div>
+                  <div class="t-name">Amanda Martins</div>
+                  <div class="t-meta">Florianópolis – SC · Hidráulica</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" role="group" aria-label="Depoimento 6">
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="testimonial-text">Mandei montar um ar condicionado novo e o técnico da DaFix foi super profissional. Instalação perfeita, limpeza impecável e ainda me deu dicas de manutenção.</p>
+              <div class="testimonial-author">
+                <div class="t-avatar" style="background:linear-gradient(135deg,#0f172a,#7c3aed)" aria-hidden="true">PG</div>
+                <div>
+                  <div class="t-name">Pedro Gonçalves</div>
+                  <div class="t-meta">Campinas – SP · Ar Condicionado</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" role="group" aria-label="Depoimento 7">
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="testimonial-text">Reforma da minha sala saiu perfeita! A pintora veio com todo o material, trabalhou com muito capricho e deixou tudo limpo no final. Preço melhor do que eu esperava.</p>
+              <div class="testimonial-author">
+                <div class="t-avatar" style="background:linear-gradient(135deg,#ef4444,#f97316)" aria-hidden="true">ST</div>
+                <div>
+                  <div class="t-name">Sofia Torres</div>
+                  <div class="t-meta">Rio de Janeiro – RJ · Pintura</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card" role="group" aria-label="Depoimento 8">
+              <div class="testimonial-stars" aria-label="5 estrelas">★★★★★</div>
+              <p class="testimonial-text">Nunca tinha usado uma plataforma de serviços antes, mas o DaFix é tão simples e seguro que qualquer pessoa consegue usar. Profissional de altíssima qualidade!</p>
+              <div class="testimonial-author">
+                <div class="t-avatar" style="background:linear-gradient(135deg,#2563eb,#10b981)" aria-hidden="true">MN</div>
+                <div>
+                  <div class="t-name">Marcos Neves</div>
+                  <div class="t-meta">Salvador – BA · Elétrica</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonials-dots" role="tablist" aria-label="Navegar entre depoimentos" id="t-dots"></div>
+        <div class="testimonials-nav">
+          <button class="t-nav-btn" id="t-prev" aria-label="Depoimento anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button class="t-nav-btn" id="t-next" aria-label="Próximo depoimento">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- APP SECTION -->
+    <section class="section app-section" id="app" aria-label="Funcionalidades do aplicativo">
+      <div class="container">
+        <div class="app-inner">
+          <div class="app-screens reveal-left" aria-hidden="true">
+            <div class="app-screen">
+              <div class="app-screen-title">Busca</div>
+              <div class="app-search-bar"><span>🔍</span> Buscar serviço...</div>
+              <div>
+                <span class="app-chip">⚡ Elétrica</span>
+                <span class="app-chip">🔧 Hidráulica</span>
+                <span class="app-chip">🎨 Pintura</span>
+              </div>
+              <div class="app-mini-card">
+                <div class="app-mini-icon">⚡</div>
+                <div>
+                  <div class="app-mini-name">Eletricista</div>
+                  <div class="app-mini-rating">★ 4.9</div>
+                  <div class="app-mini-price">R$ 89</div>
+                </div>
+              </div>
+              <div class="app-mini-card">
+                <div class="app-mini-icon">🔧</div>
+                <div>
+                  <div class="app-mini-name">Encanador</div>
+                  <div class="app-mini-rating">★ 4.8</div>
+                  <div class="app-mini-price">R$ 99</div>
+                </div>
+              </div>
+            </div>
+            <div class="app-screen app-screen--main">
+              <div class="app-screen-title">Acompanhamento</div>
+              <div class="app-status-bar">
+                <div class="app-status-dot"></div>
+                <div class="app-status-text">Profissional a caminho</div>
+              </div>
+              <div class="app-pro-row">
+                <div class="app-pro-ava">CM</div>
+                <div>
+                  <div class="app-pro-name">Carlos Mendes</div>
+                  <div class="app-pro-eta">Chegada em ~8 min</div>
+                </div>
+                <div style="font-size:18px;margin-left:auto">★ 4.9</div>
+              </div>
+              <div style="background:var(--bg-soft);border-radius:10px;height:80px;margin:8px 0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-muted)">📍 Mapa em tempo real</div>
+              <div class="app-screen-title" style="margin-top:8px">Avaliação</div>
+              <div class="app-stars-row">★★★★★</div>
+              <div class="app-review-text">Deixe sua avaliação para o profissional</div>
+            </div>
+          </div>
+          <div class="app-text reveal-right">
+            <div class="section-label">Aplicativo</div>
+            <h2 class="section-title">Tudo na palma da sua mão</h2>
+            <p class="section-sub" style="font-size:1rem">Solicite, acompanhe e avalie seus serviços de qualquer lugar, a qualquer hora.</p>
+            <div class="app-feature">
+              <div class="app-feature-icon" aria-hidden="true">🔍</div>
+              <div>
+                <div class="app-feature-title">Busca inteligente</div>
+                <div class="app-feature-desc">Encontre o profissional ideal com filtros por categoria, avaliação, preço e disponibilidade.</div>
+              </div>
+            </div>
+            <div class="app-feature">
+              <div class="app-feature-icon" aria-hidden="true">📍</div>
+              <div>
+                <div class="app-feature-title">Rastreamento em tempo real</div>
+                <div class="app-feature-desc">Acompanhe a localização do profissional e o andamento do serviço ao vivo.</div>
+              </div>
+            </div>
+            <div class="app-feature">
+              <div class="app-feature-icon" aria-hidden="true">💬</div>
+              <div>
+                <div class="app-feature-title">Chat direto</div>
+                <div class="app-feature-desc">Comunique-se diretamente com o profissional sem expor seu número de telefone.</div>
+              </div>
+            </div>
+            <div class="app-feature">
+              <div class="app-feature-icon" aria-hidden="true">💳</div>
+              <div>
+                <div class="app-feature-title">Pagamento integrado</div>
+                <div class="app-feature-desc">Pague com segurança diretamente pelo app. Liberação só após conclusão do serviço.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--alt" id="faq" aria-label="Perguntas frequentes">
+      <div class="container">
+        <div class="section-head center reveal">
+          <div class="section-label">FAQ</div>
+          <h2 class="section-title">Perguntas Frequentes</h2>
+          <p class="section-sub">Tire suas principais dúvidas sobre a plataforma DaFix.</p>
+        </div>
+        <div class="faq-list reveal" role="list">
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+              <span class="faq-question">Como os profissionais são selecionados?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+              <div class="faq-answer-inner">Todos os profissionais passam por um processo rigoroso de verificação que inclui checagem de identidade, antecedentes criminais, validação de certificações profissionais e período de avaliação supervisionada. Apenas profissionais aprovados em todos os critérios conseguem trabalhar pela plataforma.</div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+              <span class="faq-question">Como funciona o pagamento?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+              <div class="faq-answer-inner">O pagamento é feito de forma segura diretamente pela plataforma. O valor fica retido e só é liberado ao profissional após você confirmar que o serviço foi concluído com satisfação. Aceitamos cartão de crédito/débito, Pix e boleto bancário.</div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              <span class="faq-question">Qual a garantia oferecida nos serviços?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+              <div class="faq-answer-inner">Oferecemos garantia de até 90 dias em todos os serviços contratados pela plataforma. Se o serviço apresentar qualquer problema dentro deste prazo, acionamos o mesmo profissional ou outro qualificado para corrigir sem custo adicional para você.</div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              <span class="faq-question">Em quanto tempo recebo orçamentos?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+              <div class="faq-answer-inner">Em média, você recebe os primeiros orçamentos em menos de 5 minutos após solicitar o serviço. Em horários de pico e para serviços urgentes, profissionais disponíveis são notificados imediatamente e respondem ainda mais rápido.</div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+              <span class="faq-question">Posso cancelar um serviço agendado?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+              <div class="faq-answer-inner">Sim. Cancelamentos feitos com mais de 2 horas de antecedência são gratuitos. Para cancelamentos dentro das 2 horas que antecedem o serviço, pode ser cobrada uma taxa mínima para compensar o profissional pelo deslocamento. O reembolso é processado em até 3 dias úteis.</div>
+            </div>
+          </div>
+          <div class="faq-item" role="listitem">
+            <button class="faq-btn" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+              <span class="faq-question">Quero me cadastrar como profissional, como faço?</span>
+              <span class="faq-chevron" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </button>
+            <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden>
+              <div class="faq-answer-inner">Acesse a plataforma e clique em "Cadastrar como Funcionário". Você passará por uma análise de perfil, envio de documentos e verificação de antecedentes. O processo leva em média 48 horas e você começa a receber chamados assim que aprovado.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section" id="solicitar" aria-label="Solicitar serviço agora">
+      <div class="cta-inner">
+        <h2 class="cta-title">Precisa de ajuda hoje?</h2>
+        <p class="cta-sub">Solicite um profissional em menos de 2 minutos. Seguro, rápido e com garantia.</p>
+        <div class="cta-btns">
+          <a href="/index" class="btn btn--white btn--lg" aria-label="Solicitar serviço agora">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Solicitar Serviço
+          </a>
+          <a href="#contato" class="btn btn--outline-white btn--lg">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 013 .82h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            Entrar em Contato
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="lp-footer" id="contato" role="contentinfo" aria-label="Rodapé do site">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="/landing" class="logo" aria-label="DaFix">
+            <img src="/assets/logo.png" alt="" class="logo__icon" width="40" height="40" aria-hidden="true">
+            Da<span>Fix</span>
+          </a>
+          <p class="footer-brand-desc">A plataforma mais segura e confiável para contratar profissionais qualificados para sua casa.</p>
+          <div class="footer-social" aria-label="Redes sociais">
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Empresa</div>
+          <nav class="footer-links" aria-label="Links da empresa">
+            <a href="#">Sobre nós</a>
+            <a href="#">Blog</a>
+            <a href="#">Carreiras</a>
+            <a href="#">Imprensa</a>
+            <a href="#">Parceiros</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer-col-title">Serviços</div>
+          <nav class="footer-links" aria-label="Categorias de serviços">
+            <a href="#servicos">Elétrica</a>
+            <a href="#servicos">Hidráulica</a>
+            <a href="#servicos">Pintura</a>
+            <a href="#servicos">Reformas</a>
+            <a href="#servicos">Ver todos</a>
+          </nav>
+          <div class="footer-col-title" style="margin-top:24px">Suporte</div>
+          <nav class="footer-links" aria-label="Links de suporte">
+            <a href="#">Central de Ajuda</a>
+            <a href="#faq">FAQ</a>
+            <a href="#">Contato</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Privacidade</a>
+          </nav>
+        </div>
+        <div>
+          <div class="footer-col-title">Contato</div>
+          <div class="footer-links" style="gap:14px">
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:contato@dafix.com.br">contato@dafix.com.br</a>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 013 .82h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              <a href="tel:+5541999999999">(41) 99999-9999</a>
+            </div>
+            <div class="footer-contact-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Curitiba – Paraná, Brasil</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">© 2026 DaFix. Todos os direitos reservados.</p>
+        <nav class="footer-legal" aria-label="Links legais">
+          <a href="#">Privacidade</a>
+          <a href="#">Termos</a>
+          <a href="#">Cookies</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script src="landing-page.js"></script>
+</body>
+</html>

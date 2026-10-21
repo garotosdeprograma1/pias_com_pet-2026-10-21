@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>DaFix Pets — Meu Mascote</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="gamification.css" />
+</head>
+<body>
+
+<header class="g-header">
+  <a href="/" class="g-header__brand">
+    <img src="/assets/logo.png" alt="" width="34" height="34" class="g-header__logo" />
+    <span>DaFix <em>Pets</em></span>
+  </a>
+  <div class="g-header__right">
+    <button class="g-btn g-btn--ghost" id="themeToggle" aria-label="Alternar tema">
+      <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <a href="/" class="g-btn g-btn--primary">← Voltar ao painel</a>
+  </div>
+</header>
+
+<main class="g-main">
+  <nav class="g-tabs" role="tablist">
+    <button class="g-tab is-active" data-tab="pet" role="tab">🐕 Meu Pet</button>
+    <button class="g-tab" data-tab="goals" role="tab">🎯 Metas</button>
+    <button class="g-tab" data-tab="store" role="tab">🛍️ Loja</button>
+    <button class="g-tab" data-tab="ranking" role="tab">🏆 Ranking</button>
+  </nav>
+
+  <!-- PET -->
+  <section class="g-panel is-active" data-panel="pet">
+    <div class="g-pet-layout">
+      <div class="g-pet-stage" id="petStage">
+        <div class="g-pet-stage__bg"></div>
+        <div class="g-pet-stage__bg-custom" id="petStageBg" hidden></div>
+        <div class="g-pet-sprite" id="petSprite">
+          <span class="g-pet-sprite__clothes" hidden></span>
+          <span class="g-pet-sprite__emoji">🐕</span>
+          <span class="g-pet-sprite__hat" hidden></span>
+          <span class="g-pet-sprite__collar" hidden></span>
+        </div>
+        <div class="g-pet-mood" id="petMood">😊 Feliz</div>
+      </div>
+      <div class="g-pet-stats">
+        <div class="g-card">
+          <div class="g-card__head">
+            <h2 id="petName">Faísca</h2>
+            <span class="g-badge" id="petLevelBadge">Lv. 1</span>
+          </div>
+          <p class="g-muted" id="petXpLabel">0 / 150 XP para o próximo nível</p>
+          <div class="g-bar"><div class="g-bar__fill" id="petXpBar" style="width:0%"></div></div>
+        </div>
+        <div class="g-stat-grid">
+          <div class="g-stat-card"><span class="g-stat-card__icon">🍖</span><span class="g-stat-card__val" id="statFood">0</span><span class="g-stat-card__lbl">Comida</span></div>
+          <div class="g-stat-card"><span class="g-stat-card__icon">🔥</span><span class="g-stat-card__val" id="statStreak">0</span><span class="g-stat-card__lbl">Dias seguidos</span></div>
+          <div class="g-stat-card"><span class="g-stat-card__icon">🏆</span><span class="g-stat-card__val" id="statRank">—</span><span class="g-stat-card__lbl">Posição</span></div>
+          <div class="g-stat-card"><span class="g-stat-card__icon">⭐</span><span class="g-stat-card__val" id="statBadges">0</span><span class="g-stat-card__lbl">Insígnias</span></div>
+        </div>
+        <div class="g-card">
+          <div class="g-card__head"><h3>Fome</h3><span class="g-muted" id="hungerLabel">100%</span></div>
+          <div class="g-bar g-bar--hunger"><div class="g-bar__fill" id="hungerBar" style="width:100%"></div></div>
+          <div class="g-pet-actions">
+            <button class="g-btn g-btn--primary g-btn--lg" id="feedBtn" disabled>🍖 Alimentar (+15 XP)</button>
+            <button class="g-btn g-btn--ghost" id="renameBtn">✏️ Renomear</button>
+          </div>
+          <p class="g-muted g-muted--sm">Alimentar consome 1 unidade de comida. A fome cai 8%/hora.</p>
+        </div>
+        <div class="g-card">
+          <div class="g-card__head"><h3>Insígnias</h3></div>
+          <div class="g-badges" id="badgesList"><p class="g-muted g-muted--sm">Nenhuma insígnia ainda. Continue evoluindo!</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="g-card g-card--mt">
+      <div class="g-card__head">
+        <h3>Metas de hoje</h3>
+        <button class="g-btn g-btn--ghost g-btn--sm" data-goto="goals">Ver todas →</button>
+      </div>
+      <div class="g-goal-grid" id="petGoalsPreview"></div>
+    </div>
+  </section>
+
+  <!-- GOALS -->
+  <section class="g-panel" data-panel="goals">
+    <div class="g-card">
+      <div class="g-card__head">
+        <h2>Metas diárias</h2>
+        <span class="g-badge g-badge--orange" id="goalsReset">Renova em —</span>
+      </div>
+      <p class="g-muted">Complete todas as metas para manter a sequência 🔥</p>
+      <div class="g-goal-grid g-goal-grid--full" id="goalsFull"></div>
+    </div>
+    <div class="g-card">
+      <div class="g-card__head"><h3>Últimos 30 dias</h3><span class="g-muted">Histórico</span></div>
+      <div class="g-heatmap" id="heatmap"></div>
+    </div>
+    <div class="g-card">
+      <h3>🎮 Simular ação (demo)</h3>
+      <p class="g-muted g-muted--sm">Use para testar as recompensas:</p>
+      <div class="g-demo-actions" id="demoActions"></div>
+    </div>
+  </section>
+
+  <!-- STORE -->
+  <section class="g-panel" data-panel="store">
+    <div class="g-store-layout">
+      <div class="g-store-main">
+        <div class="g-store-tabs" id="storeTabs">
+          <button class="g-chip is-active" data-slot="all">Todos</button>
+          <button class="g-chip" data-slot="skin">Peles</button>
+          <button class="g-chip" data-slot="hat">Chapéus</button>
+          <button class="g-chip" data-slot="collar">Coleiras</button>
+          <button class="g-chip" data-slot="clothes">Roupas</button>
+          <button class="g-chip" data-slot="background">Cenários</button>
+        </div>
+        <div class="g-store-grid" id="storeGrid"></div>
+      </div>
+      <aside class="g-store-preview">
+        <h3>Pré-visualização</h3>
+        <div class="g-pet-stage g-pet-stage--sm" id="storePreviewStage">
+          <div class="g-pet-stage__bg"></div>
+          <div class="g-pet-stage__bg-custom" id="storePreviewBg" hidden></div>
+          <div class="g-pet-sprite" id="storePreview">
+            <span class="g-pet-sprite__clothes" hidden></span>
+            <span class="g-pet-sprite__emoji">🐕</span>
+            <span class="g-pet-sprite__hat" hidden></span>
+            <span class="g-pet-sprite__collar" hidden></span>
+          </div>
+        </div>
+        <button class="g-btn g-btn--primary g-btn--lg" id="saveCosmetics" disabled>Salvar customização</button>
+        <p class="g-muted g-muted--sm">Itens são desbloqueados ao subir de nível.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- RANKING -->
+  <section class="g-panel" data-panel="ranking">
+    <div class="g-card">
+      <div class="g-card__head">
+        <h2>Ranking global</h2>
+        <div class="g-toggle">
+          <button class="g-toggle__opt is-active" data-aud="funcionario">Funcionários</button>
+          <button class="g-toggle__opt" data-aud="cliente">Clientes</button>
+        </div>
+      </div>
+      <div class="g-toggle g-toggle--sm" style="margin-bottom:16px">
+        <button class="g-toggle__opt is-active" data-period="weekly">Semanal</button>
+        <button class="g-toggle__opt" data-period="monthly">Mensal</button>
+        <button class="g-toggle__opt" data-period="all_time">Geral</button>
+      </div>
+      <div class="g-podium" id="podium"></div>
+      <ol class="g-rank-list" id="rankList"></ol>
+      <div class="g-my-rank" id="myRank"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ONBOARDING MODAL -->
+<div class="g-modal" id="onboardingModal" role="dialog" aria-modal="true" aria-labelledby="onboardingTitle" hidden>
+  <div class="g-modal__backdrop"></div>
+  <div class="g-modal__dialog">
+    <div class="g-modal__emoji">🎁</div>
+    <h2 id="onboardingTitle">Bem-vindo ao DaFix Pets!</h2>
+    <p class="g-modal__sub">Você ganhou <strong>10 comidas</strong> e <strong>2 itens</strong> de presente. Vamos levar a Faísca ao <strong>Nível 2</strong> agora mesmo?</p>
+    <div class="g-modal__progress">
+      <div class="g-bar"><div class="g-bar__fill" id="obXpBar" style="width:0%"></div></div>
+      <p class="g-muted g-muted--sm" id="obXpLabel">0 / 150 XP</p>
+    </div>
+    <div class="g-pet-stage g-pet-stage--sm" style="margin:16px 0">
+      <div class="g-pet-stage__bg"></div>
+      <div class="g-pet-sprite" id="obSprite">
+        <span class="g-pet-sprite__clothes" hidden></span>
+        <span class="g-pet-sprite__emoji">🐕</span>
+        <span class="g-pet-sprite__hat" hidden></span>
+        <span class="g-pet-sprite__collar" hidden></span>
+      </div>
+    </div>
+    <div class="g-modal__actions">
+      <button class="g-btn g-btn--ghost" id="onboardingSkip">Depois</button>
+      <button class="g-btn g-btn--primary g-btn--lg" id="onboardingFeed">🍖 Alimentar 10x</button>
+    </div>
+  </div>
+</div>
+
+<div class="g-toasts" id="gToasts" aria-live="polite"></div>
+
+<script src="gamification-core.js"></script>
+<script src="gamification-app.js"></script>
+</body>
+</html>
