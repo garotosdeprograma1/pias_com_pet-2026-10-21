@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Área do Cliente — gerencie seus pedidos, serviços e perfil." />
+  <title>DaFix — Área do Cliente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="/cliente/stylecli.css">
+  <link rel="stylesheet" href="/cliente/pet-widget.css">
+  <script src="/cliente/pet-widget.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Pular para o conteúdo</a>
+
+  <div class="app-shell" id="app-shell">
+    <!-- ===================== SIDEBAR ===================== -->
+    <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+      <div class="sidebar__brand">
+        <img src="/assets/logo.png" alt="DaFix" class="brand__logo" width="40" height="40">
+        <span class="brand__text">
+          <span class="brand__title">Da<em>Fix</em></span>
+          <span class="brand__subtitle" data-i18n="brand.area">Área do Cliente</span>
+        </span>
+      </div>
+
+      <nav class="sidebar__nav">
+        <p class="nav__label" data-i18n="nav.label">Menu</p>
+        <div class="nav__list">
+          <button class="nav__item is-active" data-view="account" data-testid="nav-account">
+            <span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg></span>
+            <span class="nav__text" data-i18n="nav.account">Minha Conta</span>
+          </button>
+          <button class="nav__item" data-view="orders" data-testid="nav-orders">
+            <span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                <rect x="8" y="2" width="8" height="4" rx="1" />
+                <path d="M9 12h6M9 16h4" />
+              </svg></span>
+            <span class="nav__text" data-i18n="nav.orders">Pedidos</span>
+            <span class="nav__badge" id="nav-orders-badge" data-testid="nav-orders-badge">0</span>
+          </button>
+          <button class="nav__item" data-view="services" data-testid="nav-services">
+            <span class="nav__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+              </svg></span>
+            <span class="nav__text" data-i18n="nav.services">Serviços</span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="sidebar__promo">
+        <span class="promo__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M20 12v10H4V12M2 7h20v5H2zM12 22V7M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7zM12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z" />
+          </svg></span>
+        <p class="promo__title" data-i18n="promo.title">Indique e ganhe</p>
+        <p class="promo__text" data-i18n="promo.text">Convide amigos e ganhe R$ 30 de desconto no próximo serviço.</p>
+        <button class="promo__btn" id="promo-btn" data-testid="promo-btn" data-i18n="promo.btn">Convidar amigos</button>
+      </div>
+
+      <div class="sidebar__user">
+        <button class="avatar avatar--sm js-avatar" id="sidebar-avatar" aria-label="Perfil"><span
+            class="avatar__initials"></span><span class="avatar__status"></span></button>
+        <div class="sidebar__user-info">
+          <strong id="sidebar-username">—</strong>
+          <span data-i18n="sidebar.plan">Cliente Premium</span>
+        </div>
+        <div class="sidebar__user">
+          <button class="avatar avatar--sm js-avatar" id="sidebar-avatar" aria-label="Perfil"><span
+              class="avatar__initials"></span><span class="avatar__status"></span></button>
+          <div class="sidebar__user-info">
+            <strong id="sidebar-username">—</strong>
+            <span data-i18n="sidebar.plan">Cliente Premium</span>
+          </div>
+          <!-- ▼ ADICIONE ISTO ▼ -->
+          <button class="sidebar__logout" id="sidebar-logout" type="button" aria-label="Sair da conta" title="Sair"
+            data-i18n-title="sidebar.logout" data-testid="sidebar-logout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
+          </button>
+          <!-- ▲ FIM DA ADIÇÃO ▲ -->
+        </div>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- ===================== COLUNA PRINCIPAL ===================== -->
+    <div class="app-main">
+      <header class="topbar">
+        <div class="topbar__left">
+          <button class="icon-btn topbar__menu" id="menu-btn" aria-label="Abrir menu" data-testid="menu-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M3 6h18M3 12h18M3 18h18" />
+            </svg>
+          </button>
+          <div class="topbar__title">
+            <span class="breadcrumb">DaFix <span aria-hidden="true">›</span> <span id="breadcrumb-page">Minha
+                Conta</span></span>
+            <h1 id="topbar-title" data-testid="topbar-title">Minha Conta</h1>
+          </div>
+        </div>
+        <div class="topbar__right">
+          <button class="ctrl-btn" id="lang-toggle" aria-label="Mudar idioma / Change language"
+            data-testid="lang-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" />
+              <path
+                d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+            <span id="lang-label">EN</span>
+          </button>
+          <button class="icon-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro" data-testid="theme-toggle">
+            <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </button>
+
+          <!-- Notificações (dropdown) -->
+          <div class="notifications">
+            <button class="icon-btn" id="notif-btn" aria-label="Notificações" aria-expanded="false"
+              data-testid="notif-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+              </svg>
+              <span class="notif-badge" id="notif-badge" data-testid="notif-badge">3</span>
+            </button>
+            <div class="dropdown" id="notif-dropdown" data-testid="notif-dropdown">
+              <div class="dropdown__head">
+                <div>
+                  <h3 data-i18n="notif.title">Notificações</h3>
+                  <p id="notif-sub">—</p>
+                </div>
+                <button class="link-btn" id="notif-mark-all" data-testid="notif-mark-all"
+                  data-i18n="notif.markAll">Marcar todas como lidas</button>
+              </div>
+              <ul class="notif-list" id="notif-dropdown-list"></ul>
+            </div>
+          </div>
+
+          <button class="avatar avatar--sm js-avatar topbar__avatar" id="topbar-avatar" data-testid="topbar-avatar"
+            aria-label="Abrir perfil"><span class="avatar__initials"></span><span
+              class="avatar__status"></span></button>
+        </div>
+      </header>
+
+      <main id="main" class="content">
+
+        <!-- ===================== VIEW: MINHA CONTA ===================== -->
+        <section class="view is-active" id="view-account" aria-labelledby="topbar-title">
+          <div class="tabs" role="tablist" aria-label="Seções da conta">
+            <button class="tab is-active" id="tab-overview" role="tab" aria-selected="true" data-tab="overview"
+              data-testid="tab-overview">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="9" rx="1.5" />
+                <rect x="14" y="3" width="7" height="5" rx="1.5" />
+                <rect x="14" y="12" width="7" height="9" rx="1.5" />
+                <rect x="3" y="16" width="7" height="5" rx="1.5" />
+              </svg>
+              <span data-i18n="tabs.overview">Visão Geral</span>
+            </button>
+            <button class="tab" id="tab-profile" role="tab" aria-selected="false" data-tab="profile"
+              data-testid="tab-profile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span data-i18n="tabs.profile">Perfil</span>
+            </button>
+            <span class="tabs__indicator" aria-hidden="true"></span>
+          </div>
+
+          <!-- ------- Aba: Visão Geral ------- -->
+          <div class="tab-panel is-active" id="panel-overview" role="tabpanel" data-testid="panel-overview">
+            <div class="hero">
+              <div class="hero__text">
+                <span class="chip chip--soft"><span class="chip__pulse"></span><span id="hero-date">—</span></span>
+                <h2 id="greeting-title" data-testid="greeting-title">Olá!</h2>
+                <p data-i18n="overview.greetingSub">Aqui está um resumo da sua conta hoje. Acompanhe seus pedidos e
+                  descubra novos serviços.</p>
+              </div>
+              <div class="hero__actions">
+                <button class="btn btn--primary" id="greeting-cta" data-testid="greeting-cta">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M12 5v14M5 12h14" />
+                  </svg>
+                  <span data-i18n="overview.newRequest">Novo pedido</span>
+                </button>
+                <button class="btn btn--ghost" id="hero-orders-btn" data-testid="hero-orders-btn">
+                  <span data-i18n="quick.orders">Ver meus pedidos</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="metrics" id="stats-grid" data-testid="stats-grid"></div>
+
+            <div class="grid grid--main">
+              <article class="panel">
+                <header class="panel__head">
+                  <div>
+                    <h3 class="panel__title" data-i18n="overview.recentOrders">Pedidos recentes</h3>
+                    <p class="panel__subtitle" data-i18n="overview.recentSub">Seus últimos pedidos e status atuais.</p>
+                  </div>
+                  <button class="link-btn" id="see-all-orders" data-testid="see-all-orders"
+                    data-i18n="overview.seeAll">Ver todos</button>
+                </header>
+                <ul class="recent-list" id="recent-orders" data-testid="recent-orders"></ul>
+              </article>
+
+              <article class="panel">
+                <header class="panel__head">
+                  <div>
+                    <h3 class="panel__title" data-i18n="overview.notifications">Notificações</h3>
+                    <p class="panel__subtitle" data-i18n="overview.notifSub">Atualizações importantes da sua conta.</p>
+                  </div>
+                </header>
+                <ul class="overview-notifs" id="notif-list" data-testid="notif-list"></ul>
+              </article>
+            </div>
+
+            <article class="panel">
+              <header class="panel__head">
+                <div>
+                  <h3 class="panel__title" data-i18n="overview.quickActions">Ações rápidas</h3>
+                  <p class="panel__subtitle" data-i18n="overview.quickSub">Atalhos para o que você mais usa.</p>
+                </div>
+              </header>
+              <div class="quick-actions" id="quick-actions" data-testid="quick-actions"></div>
+            </article>
+          </div>
+
+          <!-- ------- Aba: Perfil ------- -->
+          <div class="tab-panel" id="panel-profile" role="tabpanel" data-testid="panel-profile">
+            <div class="profile">
+              <div class="profile__cover"></div>
+              <div class="profile__head">
+                <div class="profile__id">
+                  <button class="avatar avatar--xl js-avatar" id="profile-avatar" data-testid="profile-avatar-btn"
+                    aria-label="Alterar foto de perfil">
+                    <span class="avatar__initials"></span>
+                    <span class="avatar__status"></span>
+                    <span class="avatar__edit" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                        <circle cx="12" cy="13" r="4" />
+                      </svg></span>
+                  </button>
+                  <div>
+                    <div class="profile__name">
+                      <h3 id="profile-display-name">—</h3>
+                      <span class="chip chip--verified"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                          stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                          <path d="M20 6L9 17l-5-5" />
+                        </svg><span data-i18n="profile.verified">Verificado</span></span>
+                    </div>
+                    <p class="profile__role" id="profile-display-email">—</p>
+                    <div class="chips profile__chips">
+                      <span class="chip chip--blue" data-i18n="profile.memberSince">Cliente desde 2024</span>
+                      <span class="chip chip--green" id="profile-orders-chip">—</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="profile__actions">
+                  <button class="btn btn--ghost" id="change-photo-btn" data-testid="change-photo-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                      <circle cx="12" cy="13" r="4" />
+                    </svg>
+                    <span data-i18n="profile.changePhoto">Alterar foto</span>
+                  </button>
+                  <button class="btn btn--primary" id="edit-profile-btn" data-testid="edit-profile-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M17 3a2.83 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z" />
+                    </svg>
+                    <span data-i18n="profile.edit">Editar perfil</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="profile__body">
+                <div class="profile__col">
+                  <form id="profile-form" novalidate>
+                    <h4 class="settings-group__title" data-i18n="profile.title">Dados pessoais</h4>
+                    <div class="form-grid">
+                      <div class="field">
+                        <label for="f-name" data-i18n="profile.fullName">Nome completo</label>
+                        <input type="text" id="f-name" name="name" disabled data-testid="profile-name-input"
+                          autocomplete="name" />
+                        <span class="field__error" id="err-name" role="alert"></span>
+                      </div>
+                      <div class="field">
+                        <label for="f-email" data-i18n="profile.email">E-mail</label>
+                        <input type="email" id="f-email" name="email" disabled data-testid="profile-email-input"
+                          autocomplete="email" />
+                        <span class="field__error" id="err-email" role="alert"></span>
+                      </div>
+                      <div class="field">
+                        <label for="f-phone" data-i18n="profile.phone">Telefone</label>
+                        <input type="tel" id="f-phone" name="phone" disabled data-testid="profile-phone-input"
+                          autocomplete="tel" placeholder="(11) 99999-0000" />
+                        <span class="field__error" id="err-phone" role="alert"></span>
+                      </div>
+                      <div class="field">
+                        <label for="f-address" data-i18n="profile.address">Endereço</label>
+                        <input type="text" id="f-address" name="address" disabled data-testid="profile-address-input"
+                          autocomplete="street-address" />
+                        <span class="field__error" id="err-address" role="alert"></span>
+                      </div>
+                    </div>
+
+                    <h4 class="settings-group__title prefs-title" data-i18n="profile.prefs">Preferências da conta</h4>
+                    <div class="settings-group">
+                      <label class="toggle-row">
+                        <div><strong data-i18n="profile.prefEmail">Notificações por e-mail</strong><span
+                            data-i18n="profile.prefEmailSub">Status de pedidos e mensagens importantes.</span></div>
+                        <span class="switch"><input type="checkbox" id="pref-email" disabled
+                            data-testid="pref-email-switch" /><span class="switch__slider"></span></span>
+                      </label>
+                      <label class="toggle-row">
+                        <div><strong data-i18n="profile.prefSms">Lembretes por SMS</strong><span
+                            data-i18n="profile.prefSmsSub">Avisos de visitas agendadas.</span></div>
+                        <span class="switch"><input type="checkbox" id="pref-sms" disabled
+                            data-testid="pref-sms-switch" /><span class="switch__slider"></span></span>
+                      </label>
+                      <label class="toggle-row">
+                        <div><strong data-i18n="profile.prefNews">Ofertas e novidades</strong><span
+                            data-i18n="profile.prefNewsSub">Promoções exclusivas para você.</span></div>
+                        <span class="switch"><input type="checkbox" id="pref-news" disabled
+                            data-testid="pref-news-switch" /><span class="switch__slider"></span></span>
+                      </label>
+                    </div>
+
+                    <div class="form-actions" id="profile-actions" hidden>
+                      <button type="button" class="btn btn--ghost" id="cancel-profile-btn"
+                        data-testid="cancel-profile-btn" data-i18n="profile.cancel">Cancelar</button>
+                      <button type="submit" class="btn btn--primary" id="save-profile-btn"
+                        data-testid="save-profile-btn">
+                        <span class="btn__label" data-i18n="profile.save">Salvar alterações</span>
+                        <span class="spinner"></span>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+
+                <div class="profile__col">
+                  <div class="info-card">
+                    <h4 data-i18n="reports.title">Minhas denúncias</h4>
+                    <p class="info-card__text" data-i18n="reports.subtitle">Acompanhe o andamento das denúncias enviadas
+                      à nossa equipe.</p>
+                    <ul class="reports-list" id="reports-list" data-testid="reports-list"></ul>
+                    <p class="reports-empty" id="reports-empty" data-i18n="reports.empty">Você não possui denúncias
+                      registradas.</p>
+                  </div>
+                  <div class="info-card">
+                    <h4 data-i18n="profile.security">Segurança da conta</h4>
+                    <ul class="stat-list">
+                      <li><span class="stat-list__label" data-i18n="profile.lastAccess">Último acesso</span><span
+                          class="stat-list__value" id="last-access">—</span></li>
+                      <li><span class="stat-list__label" data-i18n="profile.twoFactor">Verificação em 2
+                          etapas</span><span class="chip chip--green" data-i18n="profile.active">Ativa</span></li>
+                      <li><span class="stat-list__label" data-i18n="profile.device">Dispositivo</span><span
+                          class="stat-list__value" data-i18n="profile.deviceValue">Navegador Web</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================== VIEW: PEDIDOS ===================== -->
+        <section class="view" id="view-orders">
+          <div class="page-header">
+            <div>
+              <p data-i18n="orders.subtitle">Acompanhe e gerencie todos os seus pedidos em um só lugar.</p>
+            </div>
+          </div>
+          <div class="filter-bar" id="order-filters" role="group" aria-label="Filtrar pedidos por status">
+            <button class="filter-chip is-active" data-status="all" data-testid="filter-all"
+              data-i18n="orders.filterAll">Todos</button>
+            <button class="filter-chip" data-status="in_progress" data-testid="filter-in-progress"
+              data-i18n="status.in_progress">Em andamento</button>
+            <button class="filter-chip" data-status="pending" data-testid="filter-pending"
+              data-i18n="status.pending">Pendente</button>
+            <button class="filter-chip" data-status="completed" data-testid="filter-completed"
+              data-i18n="status.completed">Concluído</button>
+            <button class="filter-chip" data-status="cancelled" data-testid="filter-cancelled"
+              data-i18n="status.cancelled">Cancelado</button>
+          </div>
+          <div class="orders-list" id="orders-list" data-testid="orders-list"></div>
+          <div class="empty-state" id="orders-empty" hidden>
+            <span class="empty-state__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                <rect x="8" y="2" width="8" height="4" rx="1" />
+              </svg></span>
+            <h3 data-i18n="orders.emptyTitle">Nada por aqui</h3>
+            <p data-i18n="orders.empty">Nenhum pedido encontrado para este filtro.</p>
+          </div>
+        </section>
+
+        <!-- ===================== VIEW: SERVIÇOS ===================== -->
+        <section class="view" id="view-services">
+          <div class="tabs" role="tablist" aria-label="Catálogo e favoritos">
+            <button class="tab is-active" id="subtab-catalog" role="tab" aria-selected="true" data-subtab="catalog"
+              data-testid="subtab-catalog">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+              </svg>
+              <span data-i18n="services.catalog">Catálogo</span>
+            </button>
+            <button class="tab" id="subtab-favorites" role="tab" aria-selected="false" data-subtab="favorites"
+              data-testid="subtab-favorites">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+              <span data-i18n="services.favorites">Favoritos</span>
+              <span class="tab__count" id="fav-count" data-testid="fav-count">0</span>
+            </button>
+            <span class="tabs__indicator" aria-hidden="true"></span>
+          </div>
+
+          <div class="filter-bar">
+            <div class="search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                aria-hidden="true">
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+              <input type="search" id="service-search" data-testid="service-search" placeholder="Buscar serviços..."
+                aria-label="Buscar serviços" />
+            </div>
+            <select class="filter-select" id="filter-category" data-testid="filter-category"
+              aria-label="Filtrar por categoria"></select>
+            <select class="filter-select" id="filter-price" data-testid="filter-price"
+              aria-label="Filtrar por preço"></select>
+            <select class="filter-select" id="filter-sort" data-testid="filter-sort" aria-label="Ordenar por"></select>
+          </div>
+
+          <div class="services-grid" id="services-grid" data-testid="services-grid"></div>
+          <div class="empty-state" id="services-empty" hidden>
+            <span class="empty-state__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round">
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg></span>
+            <h3 data-i18n="services.emptyTitle">Nenhum resultado</h3>
+            <p id="services-empty-text" data-testid="services-empty"></p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="app-foot">
+        <span>© 2026 DaFix · <span data-i18n="foot.rights">Todos os direitos reservados</span></span>
+        <ul>
+          <li><a data-i18n="foot.help">Central de ajuda</a></li>
+          <li><a data-i18n="foot.terms">Termos</a></li>
+          <li><a data-i18n="foot.privacy">Privacidade</a></li>
+        </ul>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ===================== MODAL: AVALIAÇÃO ===================== -->
+  <div class="modal" id="rating-modal" role="dialog" aria-modal="true" aria-labelledby="rating-modal-title">
+    <div class="modal__backdrop" data-close="rating-modal"></div>
+    <div class="modal__dialog modal__dialog--sm" data-testid="rating-modal">
+      <button class="modal__close" id="rating-close" aria-label="Fechar avaliação" data-testid="rating-close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="modal__icon modal__icon--amber" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+        </svg>
+      </div>
+      <h3 class="modal__title" id="rating-modal-title" data-i18n="modal.title">Como foi o serviço?</h3>
+      <p class="modal__desc">
+        <strong id="rating-service-name" data-testid="rating-service-name">—</strong>
+        <span data-i18n="modal.with">com</span>
+        <strong id="rating-pro-name" data-testid="rating-pro-name">—</strong>
+      </p>
+
+      <div class="stars-row" id="rating-stars" role="radiogroup" aria-label="Nota de 1 a 5 estrelas"></div>
+      <p class="stars-label" id="stars-label" data-testid="stars-label">&nbsp;</p>
+      <span class="field__error stars-error" id="stars-error" role="alert"></span>
+
+      <div class="field">
+        <label for="rating-comment" data-i18n="modal.commentLabel">Comentário (opcional)</label>
+        <textarea id="rating-comment" maxlength="300" rows="4" data-testid="rating-comment" placeholder=""></textarea>
+        <div class="field__meta"><span></span><span class="field__counter" id="char-counter"
+            data-testid="char-counter">0/300</span></div>
+      </div>
+
+      <button class="btn btn--primary btn--block" id="rating-submit" data-testid="rating-submit">
+        <span class="btn__label" data-i18n="modal.submit">Enviar avaliação</span>
+        <span class="spinner"></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===================== MODAL: ALTERAR FOTO ===================== -->
+  <div class="modal" id="photo-modal" role="dialog" aria-modal="true" aria-labelledby="photo-modal-title">
+    <div class="modal__backdrop" data-close="photo-modal"></div>
+    <div class="modal__dialog" data-testid="photo-modal">
+      <button class="modal__close" data-close="photo-modal" aria-label="Fechar" data-testid="photo-close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+      <div class="modal__head-block">
+        <h3 class="modal__title" id="photo-modal-title" data-i18n="photo.title">Alterar foto de perfil</h3>
+        <p class="modal__desc" data-i18n="photo.subtitle">Envie uma imagem ou escolha um avatar para personalizar sua
+          conta.</p>
+      </div>
+
+      <div class="upload">
+        <div class="upload__preview avatar js-photo-preview" id="photo-preview" data-testid="photo-preview"><span
+            class="avatar__initials"></span></div>
+        <div class="upload__info">
+          <p class="upload__title" data-i18n="photo.uploadTitle">Enviar do dispositivo</p>
+          <p class="upload__meta" data-i18n="photo.uploadMeta">JPG, PNG ou WebP · máx. 5 MB · recomendado 400×400px</p>
+          <div class="upload__actions">
+            <button class="btn btn--primary" id="photo-upload-btn" data-testid="photo-upload-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12" />
+              </svg>
+              <span data-i18n="photo.upload">Escolher imagem</span>
+            </button>
+            <button class="btn btn--text" id="photo-remove-btn" data-testid="photo-remove-btn"
+              data-i18n="photo.remove">Remover foto</button>
+          </div>
+          <input type="file" id="photo-file-input" accept="image/png,image/jpeg,image/webp" hidden
+            data-testid="photo-file-input" />
+        </div>
+      </div>
+
+      <div class="photo-presets-block">
+        <p class="settings-group__title" data-i18n="photo.presets">Ou escolha um avatar</p>
+        <div class="photo-presets" id="photo-presets" data-testid="photo-presets"></div>
+      </div>
+
+      <div class="modal__actions">
+        <button class="btn btn--ghost" data-close="photo-modal" data-testid="photo-cancel-btn"
+          data-i18n="photo.cancel">Cancelar</button>
+        <button class="btn btn--primary" id="photo-save-btn" data-testid="photo-save-btn">
+          <span class="btn__label" data-i18n="photo.save">Salvar foto</span>
+          <span class="spinner"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== MODAL: DENÚNCIA ===================== -->
+  <div class="modal" id="report-modal" role="dialog" aria-modal="true" aria-labelledby="report-modal-title">
+    <div class="modal__backdrop" data-close="report-modal"></div>
+    <div class="modal__dialog" data-testid="report-modal">
+      <button class="modal__close" data-close="report-modal" aria-label="Fechar denúncia" data-testid="report-close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M18 6L6 18M6 6l12 12" />
+        </svg>
+      </button>
+
+      <div id="report-form-wrap">
+        <div class="modal__icon modal__icon--red" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" />
+          </svg>
+        </div>
+        <h3 class="modal__title" id="report-modal-title" data-testid="report-modal-title">—</h3>
+        <p class="modal__desc" data-i18n="report.subtitle">Sua denúncia é confidencial e será analisada pela nossa
+          equipe de segurança em até 48h úteis.</p>
+
+        <div class="report-target" id="report-target" data-testid="report-target">
+          <span class="report-target__icon" id="report-target-icon"></span>
+          <div>
+            <p class="report-target__label" data-i18n="report.target">Você está denunciando</p>
+            <strong id="report-target-name">—</strong>
+            <span class="report-target__meta" id="report-target-meta"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="report-reason" data-i18n="report.reason">Motivo da denúncia</label>
+          <select id="report-reason" data-testid="report-reason"></select>
+          <span class="field__error" id="err-report-reason" role="alert"></span>
+        </div>
+
+        <div class="field">
+          <label for="report-details" data-i18n="report.details">Descreva o ocorrido</label>
+          <textarea id="report-details" maxlength="500" rows="4" data-testid="report-details" placeholder=""></textarea>
+          <div class="field__meta">
+            <span class="field__error" id="err-report-details" role="alert"></span>
+            <span class="field__counter" id="report-counter" data-testid="report-counter">0/500</span>
+          </div>
+        </div>
+
+        <label class="toggle-row report-anon">
+          <div><strong data-i18n="report.anonymous">Denúncia anônima</strong><span data-i18n="report.anonymousSub">Seu
+              nome não será exibido ao denunciado.</span></div>
+          <span class="switch"><input type="checkbox" id="report-anonymous" data-testid="report-anonymous" /><span
+              class="switch__slider"></span></span>
+        </label>
+
+        <div class="modal__actions">
+          <button class="btn btn--ghost" data-close="report-modal" data-i18n="report.cancel">Cancelar</button>
+          <button class="btn btn--danger" id="report-submit" data-testid="report-submit">
+            <span class="btn__label" data-i18n="report.submit">Enviar denúncia</span>
+            <span class="spinner"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal__success" id="report-success" hidden data-testid="report-success">
+        <span class="success-check">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+        </span>
+        <h3 class="modal__title" data-i18n="report.successTitle">Denúncia enviada!</h3>
+        <p class="modal__desc" id="report-success-text">—</p>
+        <button class="btn btn--primary btn--block" id="report-done" data-testid="report-done"
+          data-i18n="report.done">Entendi</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== TOASTS ===================== -->
+  <div class="toasts" id="toast-container" aria-live="polite"></div>
+
+  <script src="/cliente/scriptcli.js" type="module"></script>
+</body>
+
+</html>
