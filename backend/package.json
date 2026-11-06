@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "node-cron": "^4.6.0",
-    "node.js": "^0.0.1-security",
-    "sqlite3": "^6.0.1"
-  }
-}
