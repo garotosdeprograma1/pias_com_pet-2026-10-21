@@ -1,0 +1,27 @@
+# Dependências
+node_modules/
+backend/node_modules/
+
+# Banco de dados local (contém dados sensíveis)
+backend/banco.db
+backend/banco.db-journal
+backend/banco.db-shm
+backend/banco.db-wal
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Variáveis de ambiente
+.env
+.env.local
